@@ -1,0 +1,1410 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UserModule</name>
+    </assembly>
+    <members>
+        <member name="T:UserForms.HelpForm">
+            <summary>
+            ComMate: Help 창 띄우기
+            </summary>
+        </member>
+        <member name="F:UserForms.HelpForm._showCheckList">
+            <summary>
+            ComMate: 품목 코드 체크 박스 사용 여부
+            </summary>
+        </member>
+        <member name="F:UserForms.HelpForm._showComboBox_Bout">
+            <summary>
+            ComMate: 품목상태 콤보박스 사용 여부
+            </summary>
+        </member>
+        <member name="F:UserForms.HelpForm._showCheckList_HrmEmp">
+            <summary>
+            ComMate: '재직자' 체크 박스 사용 여부(HrmEmp에서 사용)
+            </summary>
+        </member>
+        <member name="F:UserForms.HelpForm._showCheckList_ComCust">
+            <summary>
+            ComMate: '업체구분' 체크 박스 사용 여부(ComCust에서 사용)
+            </summary>
+        </member>
+        <member name="F:UserForms.HelpForm._isCancel">
+            <summary>
+            ComMate: 그냥 닫을 때 값이 넘어오는것을 방지하기 위함
+            </summary>
+        </member>
+        <member name="F:UserForms.HelpForm._helpFormResult">
+            <summary>
+            ComMate: Spread 더블 클릭한 내용 저장 소
+            </summary>
+        </member>
+        <member name="M:UserForms.HelpForm.#ctor(System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.Object}})">
+            <summary>
+            ComMate: 생성자
+            </summary>
+        </member>
+        <member name="M:UserForms.HelpForm.#ctor(System.Collections.Generic.List{System.Collections.Generic.Dictionary{System.String,System.Object}},System.String)">
+            <summary>
+            ComMate: 생성자
+            </summary>
+        </member>
+        <member name="M:UserForms.HelpForm.HelpForm_Load(System.Object,System.EventArgs)">
+            <summary>
+            ComMate: 초기 로딩
+            </summary>
+        </member>
+        <member name="M:UserForms.HelpForm.cmSpread_CellDoubleClick(System.Object,FarPoint.Win.Spread.CellClickEventArgs)">
+            <summary>
+            ComMate: Spread 더블 클릭 이벤트
+            </summary>
+        </member>
+        <member name="M:UserForms.HelpForm.cmButton_Search_Click(System.Object,System.EventArgs)">
+            <summary>
+            ComMate: 검색 버튼 클릭 시
+            </summary>
+        </member>
+        <member name="M:UserForms.HelpForm.SetCheckList">
+            <summary>
+            ComMate: 품목 코드 가져와서 cmCheckList 설정
+            </summary>
+        </member>
+        <member name="M:UserForms.HelpForm.SetComboBox_Bout">
+            <summary>
+            ComMate: 품목상태 가져와서 cmComboBox 설정
+            </summary>
+        </member>
+        <member name="M:UserForms.HelpForm.SetCheckList_HrmEmp">
+            <summary>
+            ComMate: HrmEmp 조회시 '재직자' cmCheckList 설정
+            </summary>
+        </member>
+        <member name="M:UserForms.HelpForm.SetCheckList_ComCust">
+            <summary>
+            ComMate: ComCust 조회시 '업체구분' cmCheckList 설정
+            </summary>
+        </member>
+        <member name="M:UserForms.HelpForm.SetSize">
+            <summary>
+            ComMate: HelpForm 폼 사이즈 조절
+            </summary>
+        </member>
+        <member name="M:UserForms.HelpForm.OnClosing(System.ComponentModel.CancelEventArgs)">
+            <summary>
+            ComMate: 폼을 닫기 전에 발생
+            </summary>
+        </member>
+        <member name="F:UserForms.HelpForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:UserForms.HelpForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:UserForms.HelpForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:UserForms.HelpForm.QueryClass">
+            <summary>
+            ComMate: 조회문 기본 설정 
+            [] 로 변수 처리, [value] 로 입력 시 value 는 기본 값
+            </summary>
+            
+        </member>
+        <member name="F:UserForms.HelpForm.QueryClass.RowCount">
+            <summary>
+            검색할 RowCount
+            </summary>
+        </member>
+        <member name="F:UserForms.HelpForm.QueryClass.Keyword">
+            <summary>
+            넘겨줄 키워드
+            </summary>
+        </member>
+        <member name="F:UserForms.HelpForm.QueryClass.IsSearch">
+            <summary>
+            바로 조회 여부
+            </summary>
+        </member>
+        <member name="F:UserForms.HelpForm.QueryClass.ItType">
+            <summary>
+            ITTYPE 필드명
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComCustItemResult">
+            <summary>
+            ComMate: 선택한 사원 정보
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComCustItem">
+            <summary>
+            ComMate: 사원 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComSPAREResult">
+            <summary>
+            ComMate: 선택한 사원 정보
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComSPARE">
+            <summary>
+            ComMate: 사원 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.HrmDepResult">
+            <summary>
+            ComMate: 인사코드 정보
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.HrmDep">
+            <summary>
+            ComMate: 인사코드 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmReturn.MixRubberMstResult">
+            <summary>
+            ComMate: 선택한 사원 정보
+            </summary>
+        </member>
+        <member name="T:CmReturn.MixRubberMst">
+            <summary>
+            ComMate: 사원 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComWCMECHResult">
+            <summary>
+            ComMate: W/C별 설비정보
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComWCMECH">
+            <summary>
+            ComMate: W/C별 설비정보 리턴
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC421Result">
+            <summary>
+            ComMate: 선택한 공통 코드
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC421">
+            <summary>
+            ComMate: 회계코드조회
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC311Result">
+            <summary>
+            ComMate: 선택한 공통 코드
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC311">
+            <summary>
+            ComMate: 회계코드조회
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC421Result">
+            <summary>
+            ComMate: 회계받을어음, 회계받을어음입고만
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC421">
+            <summary>
+            ComMate: 회계 차입금
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC311Result">
+            <summary>
+            ComMate: 관리항목명
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC311">
+            <summary>
+            ComMate: 회계 제예금
+            </summary>
+        </member>
+        <member name="T:CmReturn.HrmDepResult">
+            <summary>
+            ComMate: 선택한 사원 정보
+            </summary>
+        </member>
+        <member name="T:CmReturn.HrmDep">
+            <summary>
+            ComMate: 사원 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComITSTOKResult">
+            <summary>
+            ComMate: 선택한 품목의 재고정보(PBOM)
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComITGongResult">
+            <summary>
+            ComMate: 선택한 품목의 공정정보
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComITGong">
+            <summary>
+            ComMate: 사원 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC321Result">
+            <summary>
+            ComMate: 선택한 공통 코드
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC321">
+            <summary>
+            ComMate: 회계코드조회
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComRateResult">
+            <summary>
+            ComMate: 선택한 사원 정보
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComRate">
+            <summary>
+            ComMate: 사원 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC321Result">
+            <summary>
+            ComMate: 관리항목명
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC321">
+            <summary>
+            ComMate: 회계 공통코드 명세 리턴
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComWareGBResult">
+            <summary>
+            ComMate: 선택한 사원 정보
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComWareGB">
+            <summary>
+            ComMate: 사원 목록 Help 폼
+            </summary>
+        </member>
+        <member name="M:CmHelpForms.WindowSize.SetDefaultSize">
+            <summary>
+            ComMate: 창의 위치와 크기를 디폴드값으로 설정
+            </summary>
+        </member>
+        <member name="M:CmHelpForms.WindowSize.SetSize(System.Int32,System.Int32)">
+            <summary>
+            ComMate: 창의 크기 설정
+            </summary>
+        </member>
+        <member name="M:CmHelpForms.WindowSize.SetSize(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            ComMate: 창의 위치와 크기 설정
+            </summary>
+        </member>
+        <member name="P:CmHelpForms.WindowSize.Left">
+            <summary>
+            ComMate: 창의 왼쪽 여백
+            </summary>
+        </member>
+        <member name="P:CmHelpForms.WindowSize.Top">
+            <summary>
+            ComMate: 창의 위쪽 여백
+            </summary>
+        </member>
+        <member name="P:CmHelpForms.WindowSize.Width">
+            <summary>
+            ComMate: 창의 너비
+            </summary>
+        </member>
+        <member name="P:CmHelpForms.WindowSize.Height">
+            <summary>
+            ComMate: 창의 높이
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComSPAREResult">
+            <summary>
+            ComMate: 선택한 사원 정보
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComSPARE">
+            <summary>
+            ComMate: 사원 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC353Result">
+            <summary>
+            ComMate: 선택한 공통 코드
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC353">
+            <summary>
+            ComMate: 회계코드조회
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC012Result">
+            <summary>
+            ComMate: 선택한 공통 코드
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC012">
+            <summary>
+            ComMate: 회계코드조회
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC001Result">
+            <summary>
+            ComMate: 선택한 공통 코드
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC001">
+            <summary>
+            ComMate: 공통 코드 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC001Result">
+            <summary>
+            ComMate: 선택한 사원 정보
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC001">
+            <summary>
+            ComMate: 사원 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC352Result">
+            <summary>
+            ComMate: 선택한 공통 코드
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC352">
+            <summary>
+            ComMate: 회계코드조회
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC341Result">
+            <summary>
+            ComMate: 선택한 공통 코드
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC341">
+            <summary>
+            ComMate: 회계코드조회
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC121Result">
+            <summary>
+            ComMate: 선택한 공통 코드
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC121">
+            <summary>
+            ComMate: 회계코드조회
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC011Result">
+            <summary>
+            ComMate: 선택한 공통 코드
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC011">
+            <summary>
+            ComMate: 회계코드조회
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC000Result">
+            <summary>
+            ComMate: 선택한 공통 코드
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC000">
+            <summary>
+            ComMate: 공통 코드 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:UserModule.Properties.Resources">
+            <summary>
+              지역화된 문자열 등을 찾기 위한 강력한 형식의 리소스 클래스입니다.
+            </summary>
+        </member>
+        <member name="P:UserModule.Properties.Resources.ResourceManager">
+            <summary>
+              이 클래스에서 사용하는 캐시된 ResourceManager 인스턴스를 반환합니다.
+            </summary>
+        </member>
+        <member name="P:UserModule.Properties.Resources.Culture">
+            <summary>
+              이 강력한 형식의 리소스 클래스를 사용하여 모든 리소스 조회에 대한 현재 스레드의 CurrentUICulture
+              속성을 재정의합니다.
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC000Result">
+            <summary>
+            ComMate: 선택한 사원 정보
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC000">
+            <summary>
+            ComMate: 사원 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC341Result">
+            <summary>
+            ComMate: 관리항목명
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC341">
+            <summary>
+            ComMate: 회계 공통코드 명세 리턴
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC121Result">
+            <summary>
+            ComMate: 관리항목명
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC121">
+            <summary>
+            ComMate: 회계 분개패턴 표제 리턴
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC022Result">
+            <summary>
+            ComMate: 회계 계정코드명
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC022">
+            <summary>
+            ComMate: 부문코드명
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC011Result">
+            <summary>
+            ComMate: 관리항목명
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC011">
+            <summary>
+            ComMate: 부문코드명
+            </summary>
+        </member>
+        <member name="T:CmReturn.HeadCodeResult">
+            <summary>
+            ComMate: 선택한 사원 정보
+            </summary>
+        </member>
+        <member name="T:CmReturn.HeadCode">
+            <summary>
+            ComMate: 사원 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComTableResult">
+            <summary>
+            ComMate: 선택한 사원 정보
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComTable">
+            <summary>
+            ComMate: 사원 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComWCMECHResult">
+            <summary>
+            ComMate: W/C별 설비정보
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComWCMECH">
+            <summary>
+            ComMate: W/C별 설비정보 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComMECHLEVELResult">
+            <summary>
+            ComMate: 선택한 공통 코드
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComMECHLEVEL">
+            <summary>
+            ComMate: 공통 코드 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC351Result">
+            <summary>
+            ComMate: 선택한 공통 코드
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC351">
+            <summary>
+            ComMate: 회계코드조회
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC131Result">
+            <summary>
+            ComMate: 선택한 공통 코드
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC131">
+            <summary>
+            ComMate: 회계코드조회
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC021Result">
+            <summary>
+            ComMate: 선택한 공통 코드
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC021">
+            <summary>
+            ComMate: 회계코드조회
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComPartNOResult">
+            <summary>
+            ComMate: 품번에 대한 품목코드 정보(업체별)
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComSaWareGBResult">
+            <summary>
+            ComMate: 선택한 사원 정보
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComSaWareGB">
+            <summary>
+            ComMate: 사원 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC351Result">
+            <summary>
+            ComMate: 관리항목명
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC351">
+            <summary>
+            ComMate: 회계 대여금 대장
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC131Result">
+            <summary>
+            ComMate: 관리항목명
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC131">
+            <summary>
+            ComMate: 회계 분개패턴 표제 리턴
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC021Result">
+            <summary>
+            ComMate: 관리항목명
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC021">
+            <summary>
+            ComMate: 부문코드명
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComWJItemResult">
+            <summary>
+            ComMate: 선택한 사원 정보
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComWJItem">
+            <summary>
+            ComMate: 사원 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComWCCDResult">
+            <summary>
+            ComMate: W/C 정보
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComWCCD">
+            <summary>
+            ComMate: W/C정보 리턴
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComItemResult">
+            <summary>
+            ComMate: 선택한 사원 정보
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComItem">
+            <summary>
+            ComMate: 사원 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.MechErrCodeResult">
+            <summary>
+            ComMate: 선택한 공통 코드
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.MechErrCode">
+            <summary>
+            ComMate: 공통 코드 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComEmpResult">
+            <summary>
+            ComMate: 선택한 사원 정보
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComEmp">
+            <summary>
+            ComMate: 사원 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC361Result">
+            <summary>
+            ComMate: 선택한 공통 코드
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC361">
+            <summary>
+            ComMate: 회계코드조회
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC031Result">
+            <summary>
+            ComMate: 선택한 공통 코드
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC031">
+            <summary>
+            ComMate: 회계코드조회
+            </summary>
+        </member>
+        <member name="M:CmReturn.GlovalValue.FromCode(System.String)">
+            <summary>
+            ComMate: 공통코드(A005)로부터 전역변수값 가져오기
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC361Result">
+            <summary>
+            ComMate: 관리항목명
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC361">
+            <summary>
+            ComMate: 회계 차입금 약정
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC031Result">
+            <summary>
+            ComMate: 관리항목명
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC031">
+            <summary>
+            ComMate: 회계 분개패턴 표제 리턴
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.HrmEmpResult">
+            <summary>
+            ComMate: 선택한 사원 정보
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.HrmEmp">
+            <summary>
+            ComMate: 사원 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComWareGBResult">
+            <summary>
+            ComMate: 선택한 공통 코드
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComWareGB">
+            <summary>
+            ComMate: 공통 코드 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC371Result">
+            <summary>
+            ComMate: 선택한 공통 코드
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC371">
+            <summary>
+            ComMate: 회계코드조회
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC151Result">
+            <summary>
+            ComMate: 선택한 공통 코드
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC151">
+            <summary>
+            ComMate: 회계코드조회
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC371Result">
+            <summary>
+            ComMate: 관리항목명
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC371">
+            <summary>
+            ComMate: 회계 차입금
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC151Result">
+            <summary>
+            ComMate: 관리항목명
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC151">
+            <summary>
+            ComMate: 회계 공통코드 명세 리턴
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComEmpResult">
+            <summary>
+            ComMate: 선택한 사원 정보
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComEmp">
+            <summary>
+            ComMate: 사원 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComCustResult">
+            <summary>
+            ComMate: 선택한 사원 정보
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComCust">
+            <summary>
+            ComMate: 사원 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComCustItemResult">
+            <summary>
+            ComMate: 품목 정보
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComCustItem">
+            <summary>
+            ComMate: 품목 Help 폼
+            </summary>
+        </member>
+        <member name="M:CmHelpForms.SetMultiType.AddItems(System.String[])">
+            <summary>
+            ComMate: 아이템 멀티 체크 박스 설정
+            </summary>
+        </member>
+        <member name="M:CmReturn.SetMultiType.AddItems(System.String[])">
+            <summary>
+            ComMate: 아이템 멀티 체크 박스 설정
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.RCutMstSabunResult">
+            <summary>
+            ComMate: 재단표준-품목정보
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.RCutMstMoldResult">
+            <summary>
+            ComMate: 재단표준-금형정보
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.RCutMstRubberResult">
+            <summary>
+            ComMate: 재단표준-배합정보
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.RCutMst">
+            <summary>
+            ComMate: 
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.HeadCodeResult">
+            <summary>
+            ComMate: 선택한 사원 정보
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.HeadCode">
+            <summary>
+            ComMate: 사원 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComWCCDResult">
+            <summary>
+            ComMate: W/C 정보
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComWCCD">
+            <summary>
+            ComMate: W/C Help 폼
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComVenDorResult">
+            <summary>
+            ComMate: 선택한 사원 정보
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComVenDor">
+            <summary>
+            ComMate: 사원 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComTableResult">
+            <summary>
+            ComMate: 선택한 사원 정보
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComTable">
+            <summary>
+            ComMate: 사원 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComItemResult">
+            <summary>
+            ComMate: 품목 정보
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComItem">
+            <summary>
+            ComMate: 품목 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComGongEmpResult">
+            <summary>
+            ComMate: 선택한 설비에 대한 공정별 작업자정보
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComGongEmp">
+            <summary>
+            ComMate: 공정별 작업자 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC381Result">
+            <summary>
+            ComMate: 선택한 공통 코드
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC381">
+            <summary>
+            ComMate: 회계코드조회
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC161Result">
+            <summary>
+            ComMate: 선택한 공통 코드
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC161">
+            <summary>
+            ComMate: 회계코드조회
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC062Result">
+            <summary>
+            ComMate: 선택한 공통 코드
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC062">
+            <summary>
+            ComMate: 회계코드조회
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComGongEmpResult">
+            <summary>
+            ComMate: 선택한 설비에 대한 공정별 작업자정보
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComGongEmp">
+            <summary>
+            ComMate: 공정별 작업자
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC381Result">
+            <summary>
+            ComMate: 회계받을어음, 회계받을어음입고만
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC381">
+            <summary>
+            ComMate: 회계 차입금
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC161Result">
+            <summary>
+            ComMate: 관리항목명
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC161">
+            <summary>
+            ComMate: 회계 공통코드 명세 리턴
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC062Result">
+            <summary>
+            ComMate: 관리항목명
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC062">
+            <summary>
+            ComMate: 회계 공통코드 명세 리턴
+            </summary>
+        </member>
+        <member name="T:CmReturn.HrmEmpResult">
+            <summary>
+            ComMate: 선택한 사원 정보
+            </summary>
+        </member>
+        <member name="T:CmReturn.HrmEmp">
+            <summary>
+            ComMate: 사원 목록 Help 폼
+            </summary>
+        </member>
+        <member name="P:CmReturn.FileSize.DefaultSize">
+            <summary>
+            ComMate: 공통코드(A004)로부터 첨부파일 용량 가져오기
+            </summary>
+        </member>
+        <member name="P:CmReturn.FileSize.BigSize">
+            <summary>
+            ComMate: 공통코드(A004)로부터 첨부파일 용량 가져오기
+            </summary>
+        </member>
+        <member name="P:CmReturn.FileSize.SmallSize">
+            <summary>
+            ComMate: 공통코드(A004)로부터 첨부파일 용량 가져오기
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.MixJrCodeResult">
+            <summary>
+            ComMate: 선택한 공통 코드
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.MixJrCode">
+            <summary>
+            ComMate: 공통 코드 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC061Result">
+            <summary>
+            ComMate: 선택한 공통 코드
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC061">
+            <summary>
+            ComMate: 회계코드조회
+            </summary>
+        </member>
+        <member name="T:CmReturn.RCutMstSabunResult">
+            <summary>
+            ComMate: 재단표준-품목정보
+            </summary>
+        </member>
+        <member name="T:CmReturn.RCutMstMoldResult">
+            <summary>
+            ComMate: 재단표준-금형정보
+            </summary>
+        </member>
+        <member name="T:CmReturn.RCutMstRubberResult">
+            <summary>
+            ComMate: 재단표준-배합정보
+            </summary>
+        </member>
+        <member name="T:CmReturn.RCutMst">
+            <summary>
+            ComMate: 사
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC061Result">
+            <summary>
+            ComMate: 관리항목명
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC061">
+            <summary>
+            ComMate: 회계 분개패턴 표제 리턴
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComMechResult">
+            <summary>
+            ComMate: 선택한 사원 정보
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComMech">
+            <summary>
+            ComMate: 사원 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComWJItemResult">
+            <summary>
+            ComMate: 선택한 공통 코드
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComWJItem">
+            <summary>
+            ComMate: 공통 코드 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComPartNOResult">
+            <summary>
+            ComMate: 품번에 대한 품목코드 정보(업체별)
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComItemPResult">
+            <summary>
+            ComMate: 품목 정보
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComItemP">
+            <summary>
+            ComMate: 품목 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComCustResult">
+            <summary>
+            ComMate: 선택한 사원 정보
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComCust">
+            <summary>
+            ComMate: 사원 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC181Result">
+            <summary>
+            ComMate: 선택한 공통 코드
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC181">
+            <summary>
+            ComMate: 회계코드조회
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComITCSTResult">
+            <summary>
+            ComMate: 선택한 사원 정보
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComITCST">
+            <summary>
+            ComMate: 사원 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC181Result">
+            <summary>
+            ComMate: 관리항목명
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC181">
+            <summary>
+            ComMate: 회계 공통코드 명세 리턴
+            </summary>
+        </member>
+        <member name="T:CmReturn.HrmCodeResult">
+            <summary>
+            ComMate: 선택한 사원 정보
+            </summary>
+        </member>
+        <member name="T:CmReturn.HrmCode">
+            <summary>
+            ComMate: 사원 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComMechLEVELResult">
+            <summary>
+            ComMate: 선택한 사원 정보
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComMECHLEVEL">
+            <summary>
+            ComMate: 사원 목록 Help 폼
+            </summary>
+        </member>
+        <member name="M:CmReturn.CheckLength.DecimalLength(System.String)">
+            <summary>
+            ComMate: 공통코드(A002)로부터 변수길이 가져오기
+            </summary>
+        </member>
+        <member name="M:CmReturn.CheckLength.KeywordLength(System.String)">
+            <summary>
+            ComMate: 공통코드(A006)로부터 변수길이 가져오기
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.MixRubberMstResult">
+            <summary>
+            ComMate: 선택한 공통 코드
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.MixRubberMst">
+            <summary>
+            ComMate: 공통 코드 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComMoldEconoResult">
+            <summary>
+            ComMate: 금형조회
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComMoldEcono">
+            <summary>
+            ComMate: 금형조회
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdSlipRemarkResult">
+            <summary>
+            ComMate: 선택한 공통 코드
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdSlipRemark">
+            <summary>
+            ComMate: 회계코드조회
+            </summary>
+        </member>
+        <member name="T:CmReturn.MixJrCodeResult">
+            <summary>
+            ComMate: 선택한 사원 정보
+            </summary>
+        </member>
+        <member name="T:CmReturn.MixJrCode">
+            <summary>
+            ComMate: 사원 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComITCARResult">
+            <summary>
+            ComMate: 선택한 사원 정보
+            </summary>
+        </member>
+        <member name="T:CmReturn.COMITCAR">
+            <summary>
+            ComMate: 사원 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComMechResult">
+            <summary>
+            ComMate: 선택한 사원 정보
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComMech">
+            <summary>
+            ComMate: 사원 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC801Result">
+            <summary>
+            ComMate: 선택한 공통 코드
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC801">
+            <summary>
+            ComMate: 회계코드조회
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComMoldResult">
+            <summary>
+            ComMate: 금형정보
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComMold">
+            <summary>
+            ComMate: 금형정보
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.TqmBadResult">
+            <summary>
+            ComMate: 선택한 사원 정보
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.TqmBad">
+            <summary>
+            ComMate: 사원 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComItemFMTResult">
+            <summary>
+            ComMate: 선택한 사원 정보
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComItemFMT">
+            <summary>
+            ComMate: 사업장 이동 품목조회
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC800Result">
+            <summary>
+            ComMate: 선택한 공통 코드
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.AcdWSVC800">
+            <summary>
+            ComMate: 회계코드조회
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC800Result">
+            <summary>
+            ComMate: 회계받을어음, 회계받을어음입고만
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC800">
+            <summary>
+            ComMate: 회계 원가 요소 코드 관리
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComDangaResult">
+            <summary>
+            ComMate: 선택한 사원 정보
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComDanga">
+            <summary>
+            ComMate: 사원 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComCodeResult">
+            <summary>
+            ComMate: 선택한 사원 정보
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComCode">
+            <summary>
+            ComMate: 사원 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComSaWareGBResult">
+            <summary>
+            ComMate: 선택한 공통 코드
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComSaWareGB">
+            <summary>
+            ComMate: 공통 코드 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.LoginListResult">
+            <summary>
+            ComMate: 로그인 사용자 정보
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.LoginList">
+            <summary>
+            ComMate: 로그인 사용자 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.HrmCodeResult">
+            <summary>
+            ComMate: 인사코드 정보
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.HrmCode">
+            <summary>
+            ComMate: 인사코드 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComITCSTResult">
+            <summary>
+            ComMate: 선택한 품목에대한 업체 정보
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComITCST">
+            <summary>
+            ComMate: 품목에 대한 업체 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComITSTOKResult">
+            <summary>
+            ComMate: 선택한 품목의 공정정보
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC001BResult">
+            <summary>
+            ComMate: 선택한 사원 정보
+            </summary>
+        </member>
+        <member name="T:CmReturn.AcdWSVC001B">
+            <summary>
+            ComMate: 부문코드명
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComITGongResult">
+            <summary>
+            ComMate: 선택한 품목의 공정정보
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComITGong">
+            <summary>
+            ComMate: 사원 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComItemFMTResult">
+            <summary>
+            ComMate: 선택한 사원 정보
+            </summary>
+        </member>
+        <member name="T:CmReturn.ComItemFMT">
+            <summary>
+            ComMate: 사원 목록 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComMoldResult">
+            <summary>
+            ComMate: 금형조회
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComMold">
+            <summary>
+            ComMate: 금형조회
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComITCARResult">
+            <summary>
+            ComMate: 차종
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.COMITCAR">
+            <summary>
+            ComMate:차종 Help 폼
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComCodeResult">
+            <summary>
+            ComMate: 선택한 공통 코드
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComCode">
+            <summary>
+            ComMate: 공통 코드 목록 Help 폼
+            </summary>
+        </member>
+        <member name="F:CmHelpForms.ZipCodeHelp.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:CmHelpForms.ZipCodeHelp.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:CmHelpForms.ZipCodeHelp.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComPARTSResult">
+            <summary>
+            ComMate: 선택한 사원 정보
+            </summary>
+        </member>
+        <member name="T:CmHelpForms.ComPARTS">
+            <summary>
+            ComMate: 사원 목록 Help 폼
+            </summary>
+        </member>
+    </members>
+</doc>

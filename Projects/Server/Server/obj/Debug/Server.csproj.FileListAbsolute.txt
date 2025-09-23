@@ -1,0 +1,15 @@
+C:\Users\ggang\Documents\Visual Studio 2008\Projects\Server\Server\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\ggang\Documents\Visual Studio 2008\Projects\Server\Server\obj\Debug\Server.Properties.Resources.resources
+C:\Users\ggang\Documents\Visual Studio 2008\Projects\Server\Server\obj\Debug\Server.csproj.GenerateResource.Cache
+C:\Users\ggang\Documents\Visual Studio 2008\Projects\Server\Server\bin\Debug\Server.exe
+C:\Users\ggang\Documents\Visual Studio 2008\Projects\Server\Server\bin\Debug\Server.pdb
+C:\Users\ggang\Documents\Visual Studio 2008\Projects\Server\Server\bin\Debug\MateModule.dll
+C:\Users\ggang\Documents\Visual Studio 2008\Projects\Server\Server\bin\Debug\UserModule.dll
+C:\Users\ggang\Documents\Visual Studio 2008\Projects\Server\Server\bin\Debug\zxing.dll
+C:\Users\ggang\Documents\Visual Studio 2008\Projects\Server\Server\bin\Debug\UserModule.pdb
+C:\Users\ggang\Documents\Visual Studio 2008\Projects\Server\Server\bin\Debug\UserModule.xml
+C:\Users\ggang\Documents\Visual Studio 2008\Projects\Server\Server\bin\Debug\MateModule.pdb
+C:\Users\ggang\Documents\Visual Studio 2008\Projects\Server\Server\bin\Debug\MateModule.xml
+C:\Users\ggang\Documents\Visual Studio 2008\Projects\Server\Server\obj\Debug\Server.exe
+C:\Users\ggang\Documents\Visual Studio 2008\Projects\Server\Server\obj\Debug\Server.pdb
+C:\Users\ggang\Documents\Visual Studio 2008\Projects\Server\Server\obj\Debug\Server.ServerFrm.resources
