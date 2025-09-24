@@ -30,54 +30,41 @@
         {
             this.cmTextBox_LOG = new MateControls.CmTextBox();
             this.cmTextBox_SEND = new MateControls.CmTextBox();
-            this.cmButton_SEND = new MateControls.CmButton();
             this.SuspendLayout();
             // 
             // cmTextBox_LOG
             // 
-            this.cmTextBox_LOG.BackColor = System.Drawing.Color.White;
+            this.cmTextBox_LOG.BackColor = System.Drawing.Color.Black;
             this.cmTextBox_LOG.ConvertLang = false;
-            this.cmTextBox_LOG.Location = new System.Drawing.Point(10, 11);
+            this.cmTextBox_LOG.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.cmTextBox_LOG.Location = new System.Drawing.Point(8, 12);
             this.cmTextBox_LOG.Multiline = true;
             this.cmTextBox_LOG.Name = "cmTextBox_LOG";
             this.cmTextBox_LOG.ReadOnly = true;
             this.cmTextBox_LOG.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.cmTextBox_LOG.Size = new System.Drawing.Size(335, 336);
+            this.cmTextBox_LOG.Size = new System.Drawing.Size(335, 224);
             this.cmTextBox_LOG.TabIndex = 0;
             this.cmTextBox_LOG.TextType = MateClass.CmEnums.TextType.Text;
             // 
             // cmTextBox_SEND
             // 
-            this.cmTextBox_SEND.BackColor = System.Drawing.Color.White;
+            this.cmTextBox_SEND.BackColor = System.Drawing.Color.Black;
             this.cmTextBox_SEND.ConvertLang = false;
-            this.cmTextBox_SEND.Location = new System.Drawing.Point(8, 359);
+            this.cmTextBox_SEND.ForeColor = System.Drawing.SystemColors.Menu;
+            this.cmTextBox_SEND.Location = new System.Drawing.Point(8, 242);
             this.cmTextBox_SEND.Multiline = true;
             this.cmTextBox_SEND.Name = "cmTextBox_SEND";
-            this.cmTextBox_SEND.Size = new System.Drawing.Size(267, 91);
+            this.cmTextBox_SEND.Size = new System.Drawing.Size(337, 34);
             this.cmTextBox_SEND.TabIndex = 1;
             this.cmTextBox_SEND.TextType = MateClass.CmEnums.TextType.Text;
             this.cmTextBox_SEND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmTextBox_SEND_KeyPress);
-            // 
-            // cmButton_SEND
-            // 
-            this.cmButton_SEND.BackColor = System.Drawing.Color.Gold;
-            this.cmButton_SEND.ConvertLang = true;
-            this.cmButton_SEND.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.cmButton_SEND.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.cmButton_SEND.Location = new System.Drawing.Point(285, 362);
-            this.cmButton_SEND.Name = "cmButton_SEND";
-            this.cmButton_SEND.Size = new System.Drawing.Size(59, 87);
-            this.cmButton_SEND.TabIndex = 2;
-            this.cmButton_SEND.Text = " 전송";
-            this.cmButton_SEND.UseVisualStyleBackColor = false;
-            this.cmButton_SEND.Click += new System.EventHandler(this.cmButton_SEND_Click);
             // 
             // ServerFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(352, 460);
-            this.Controls.Add(this.cmButton_SEND);
+            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.ClientSize = new System.Drawing.Size(352, 282);
             this.Controls.Add(this.cmTextBox_SEND);
             this.Controls.Add(this.cmTextBox_LOG);
             this.Name = "ServerFrm";
@@ -93,7 +80,6 @@
 
         private MateControls.CmTextBox cmTextBox_LOG;
         private MateControls.CmTextBox cmTextBox_SEND;
-        private MateControls.CmButton cmButton_SEND;
     }
 }
 
