@@ -13,3 +13,11 @@ C:\Users\ggang\Documents\Visual Studio 2008\Projects\Server\Server\bin\Debug\Mat
 C:\Users\ggang\Documents\Visual Studio 2008\Projects\Server\Server\obj\Debug\Server.exe
 C:\Users\ggang\Documents\Visual Studio 2008\Projects\Server\Server\obj\Debug\Server.pdb
 C:\Users\ggang\Documents\Visual Studio 2008\Projects\Server\Server\obj\Debug\Server.ServerFrm.resources
+C:\c-dev\Projects\Server\Server\bin\Debug\Server.exe
+C:\c-dev\Projects\Server\Server\bin\Debug\Server.pdb
+C:\c-dev\Projects\Server\Server\obj\Debug\ResolveAssemblyReference.cache
+C:\c-dev\Projects\Server\Server\obj\Debug\Server.Properties.Resources.resources
+C:\c-dev\Projects\Server\Server\obj\Debug\Server.ServerFrm.resources
+C:\c-dev\Projects\Server\Server\obj\Debug\Server.csproj.GenerateResource.Cache
+C:\c-dev\Projects\Server\Server\obj\Debug\Server.exe
+C:\c-dev\Projects\Server\Server\obj\Debug\Server.pdb

@@ -16,3 +16,11 @@ C:\Users\ggang\Documents\Visual Studio 2008\Projects\WindowsFormsApplication1\Wi
 C:\Users\ggang\Documents\Visual Studio 2008\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\SocketChat.csproj.GenerateResource.Cache
 C:\Users\ggang\Documents\Visual Studio 2008\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\SocketChat.exe
 C:\Users\ggang\Documents\Visual Studio 2008\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\SocketChat.pdb
+C:\c-dev\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\SocketChat.exe
+C:\c-dev\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\SocketChat.pdb
+C:\c-dev\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\SocketChat.exe
+C:\c-dev\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\SocketChat.pdb
+C:\c-dev\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\ResolveAssemblyReference.cache
+C:\c-dev\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\SocketChat.Properties.Resources.resources
+C:\c-dev\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\SocketChat.SocketChatFrm.resources
+C:\c-dev\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\SocketChat.csproj.GenerateResource.Cache

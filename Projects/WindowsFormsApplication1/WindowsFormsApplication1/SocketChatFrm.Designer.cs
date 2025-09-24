@@ -41,6 +41,7 @@
             this.cmTextBox_LOG.Multiline = true;
             this.cmTextBox_LOG.Name = "cmTextBox_LOG";
             this.cmTextBox_LOG.ReadOnly = true;
+            this.cmTextBox_LOG.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.cmTextBox_LOG.Size = new System.Drawing.Size(303, 313);
             this.cmTextBox_LOG.TabIndex = 0;
             this.cmTextBox_LOG.TextType = MateClass.CmEnums.TextType.Text;

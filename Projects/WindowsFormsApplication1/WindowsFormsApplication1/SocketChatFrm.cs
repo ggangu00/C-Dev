@@ -38,7 +38,7 @@ namespace SocketChat
             IPAddress ip = IPAddress.Parse("127.0.0.1");
 
             Client = new TcpClient();
-            Client.Connect(ip, 8080);
+            Client.Connect(ip, 13000);
 
             stream = Client.GetStream();
             Connected = true;
@@ -67,6 +67,7 @@ namespace SocketChat
         private void send_Text()
         {
             cmTextBox_LOG.AppendText("나 : " + cmTextBox_SEND.Text + "\r\n");
+            Writer.WriteLine(cmTextBox_SEND.Text);
             Writer.Flush();
 
             cmTextBox_SEND.Clear();
