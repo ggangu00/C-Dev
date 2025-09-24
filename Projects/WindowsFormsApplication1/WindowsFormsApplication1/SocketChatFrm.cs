@@ -30,20 +30,20 @@ namespace SocketChat
         {
             InitializeComponent();
         }
-
+        
         private void SocketChatFrm_Load(object sender, EventArgs e)
         {
             cmTextBox_SEND.Focus();
 
-            IPAddress ip = IPAddress.Parse("127.0.0.1");
+            IPAddress ip = IPAddress.Parse("192.168.30.131");
 
             Client = new TcpClient();
-            Client.Connect(ip, 13000);
-
+            Client.Connect(ip, 8562);
+            
             stream = Client.GetStream();
             Connected = true;
 
-            cmTextBox_LOG.AppendText("Connected to Server" + "\r\n");
+            cmTextBox_LOG.AppendText("서버에 연결됨" + "\r\n");
             Reader = new StreamReader(stream);
             Writer = new StreamWriter(stream);
 
@@ -75,6 +75,9 @@ namespace SocketChat
 
         private void SocketChatFrm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            Writer.WriteLine("접속을 종료하였습니다. \r\n");
+            Writer.Flush();
+
             Connected = false;
         }
 
@@ -87,7 +90,7 @@ namespace SocketChat
                 {
                     string ReceiveData = Reader.ReadLine();
                     if (ReceiveData != null && ReceiveData.Length > 0)
-                        cmTextBox_LOG.AppendText("상대 : 연결이 종료되었습니다. \r\n");
+                        cmTextBox_LOG.AppendText("상대 : " + ReceiveData + " \r\n");
                 }
             }
         }

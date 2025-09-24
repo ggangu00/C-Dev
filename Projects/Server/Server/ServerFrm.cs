@@ -17,10 +17,12 @@ namespace Server
     {
         private static ServerFrm instance;
         private TcpListener Server;
-        private TcpClient Client = new TcpClient();
+        //private TcpClient Client = new TcpClient();
+        private TcpClient[] Client = new TcpClient[Options.MAX_CLIENT_COUNT];
 
-        private string ipAddress = "127.0.0.1";
-        private int port = 13000;
+        private string ipAddress = "192.168.30.131";
+        private int port = 8562;
+        private int ClientCnt = 0;
 
         StreamReader Reader;
         StreamWriter Writer;
@@ -51,21 +53,33 @@ namespace Server
             IPAddress localAddr = IPAddress.Parse(ipAddress);
             Server = new TcpListener(localAddr, port);
             Server.Start();
+            Invoke(AddText, "클라이언트 접속 대기중 ..." + "\r\n");
 
-            Client = Server.AcceptTcpClient();
-            Connected = true;
+            int i = 0;
+            while (true)
+            {
 
-            Invoke(AddText, "클라이언트에 연결됨" + "\r\n");
+                if (ClientCnt < Options.MAX_CLIENT_COUNT)
+                {
+                    Client[ClientCnt] = Server.AcceptTcpClient();
 
-            stream = Client.GetStream();
-            Reader = new StreamReader(stream);
-            Writer = new StreamWriter(stream);
+                    if (Client[ClientCnt] != null)
+                    {
+                        ClientCnt++;
+                        Connected = true;
+                        Invoke(AddText, "클라이언트 " + ClientCnt + "번에 연결됨" + "\r\n");
 
-            ReceiveThread = new Thread(new ThreadStart(Receive));
-            ReceiveThread.Start();
+                        stream = Client[i].GetStream();
+                        Reader = new StreamReader(stream);
+                        Writer = new StreamWriter(stream);
 
-        }
-
+                        ReceiveThread = new Thread(new ThreadStart(Receive));
+                        ReceiveThread.Start();
+                    }                    
+                }                               
+            }        
+            
+        }    
 
         private void cmButton_SEND_Click(object sender, EventArgs e)
         {
@@ -79,7 +93,7 @@ namespace Server
                 send_Text();
             }
         }
-
+        
         private void send_Text()
         {
             cmTextBox_LOG.AppendText("나 : " + cmTextBox_SEND.Text + "\r\n");
@@ -92,8 +106,16 @@ namespace Server
 
         private void ServerFrm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Connected = false;
-            Client.Close();
+            
+            for (int i = 0; i < Client.Length; i++)
+            {                
+                Writer.WriteLine("클라이언트 " + i + "님이 접속을 종료하였습니다. \r\n");
+                Writer.Flush();                
+                Connected = false;
+
+                Client[i].Close();
+            }
+
             Server.Stop();
         }
 

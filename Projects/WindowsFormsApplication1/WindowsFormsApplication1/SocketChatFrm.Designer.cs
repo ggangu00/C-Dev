@@ -80,7 +80,7 @@
             this.Controls.Add(this.cmTextBox_SEND);
             this.Controls.Add(this.cmTextBox_LOG);
             this.Name = "SocketChatFrm";
-            this.Text = "대화방";
+            this.Text = "대화방(Client)";
             this.Load += new System.EventHandler(this.SocketChatFrm_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SocketChatFrm_FormClosing);
             this.ResumeLayout(false);
